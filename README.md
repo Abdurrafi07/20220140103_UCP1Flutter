@@ -7,6 +7,7 @@
 
 ![image](https://github.com/user-attachments/assets/0eb68a43-8c46-4f24-8650-2044b91736e4)
 
+![image](https://github.com/user-attachments/assets/332192dc-ace4-4777-80fc-b88b5fbc595e)
 
 # Register Page
 
@@ -17,6 +18,13 @@
 ![image](https://github.com/user-attachments/assets/31d66474-ac06-4215-a88b-4ef8dadae0a0)
 
 ![image](https://github.com/user-attachments/assets/224be9f4-2513-469e-b3f2-72650619d7b6)
+
+![image](https://github.com/user-attachments/assets/086963e4-a235-4bf3-9c71-f60941d9f6ce)
+
+![image](https://github.com/user-attachments/assets/84e437f6-9bf1-40a1-ac4c-f47df9b213e2)
+
+![image](https://github.com/user-attachments/assets/c002741d-19a5-42ec-acd6-22dc16a3e0aa)
+
 
 # Home Page
 
