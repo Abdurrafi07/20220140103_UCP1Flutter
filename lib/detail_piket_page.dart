@@ -45,8 +45,8 @@ class DetailPiketPage extends StatelessWidget {
     final DateTime tanggal = listTugas['date'];
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Detail Piket',
+        title: Text(
+          listTugas['task'],
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color.fromARGB(255, 76, 27, 140),
