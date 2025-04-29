@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-
   final String email;
-  
+
   const HomePage({super.key, required this.email});
 
   @override
@@ -13,6 +12,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+
+          ],
+        ),
+      ),
+    );
   }
 }
