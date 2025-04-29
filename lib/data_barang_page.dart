@@ -270,6 +270,46 @@ class _DataBarangPageState extends State<DataBarangPage> {
                       },
                     ),
                   ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 9, top: 9),
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Jumlah Barang',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            TextFormField(
+                              keyboardType: TextInputType.number,
+                              controller: jumlahBarangController,
+                              decoration: const InputDecoration(
+                                hintText: 'Jumlah Barang',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Jumlah barang tidak boleh kosong';
+                                }
+                                return null;
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                    ],
+                  ),
                 ],
               ),
             ),
