@@ -31,7 +31,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
   String? selectedJenisBarang;
 
   DateTime? _selectedDate;
-  bool _isDateInvalid = false; 
+  bool _isDateInvalid = false;
 
   Map<String, int> hargaBarang = {
     'Pot Bonsai': 30000,
@@ -65,16 +65,42 @@ class _DataBarangPageState extends State<DataBarangPage> {
   }
 
   String _hari(int index) {
-    const hari = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
+    const hari = [
+      "Senin",
+      "Selasa",
+      "Rabu",
+      "Kamis",
+      "Jumat",
+      "Sabtu",
+      "Minggu",
+    ];
     return hari[index - 1];
   }
 
   String _bulan(int index) {
     const bulan = [
-      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
-      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember",
     ];
     return bulan[index - 1];
+  }
+
+  void _updateHargaSatuan(String? selectedBarang) {
+    if (selectedBarang != null && hargaBarang.containsKey(selectedBarang)) {
+      setState(() {
+        hargaSatuanController.text = 'Rp. ${hargaBarang[selectedBarang]}';
+      });
+    }
   }
 
   @override
