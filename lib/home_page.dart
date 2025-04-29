@@ -85,7 +85,17 @@ class _HomePageState extends State<HomePage> {
                 right: 25,
                 bottom: 30,
               ),
-              // child: Image.asset('assets/images/Home.png'),
+              child: Image.asset(
+                'assets/images/Home.png',
+                width:
+                    MediaQuery.of(
+                      context,
+                    ).size.width, // Menyesuaikan dengan lebar layar
+                height:
+                    MediaQuery.of(context).size.height *
+                    0.3, // Menyesuaikan tinggi gambar sesuai proporsi
+                fit: BoxFit.cover, // Menjaga aspek rasio gambar
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -171,7 +181,11 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: Column(
                   children: [
-                    Icon(Icons.receipt_long_rounded, color: Colors.white, size: 50),
+                    Icon(
+                      Icons.receipt_long_rounded,
+                      color: Colors.white,
+                      size: 50,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       'Barang Masuk/Keluar',
@@ -184,9 +198,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => DataBarangPage(),
-                  ),
+                  MaterialPageRoute(builder: (context) => DataBarangPage()),
                 );
               },
             ),
