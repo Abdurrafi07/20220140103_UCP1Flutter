@@ -108,6 +108,60 @@ class _DataPiketPageState extends State<DataPiketPage> {
                     return null;
                   },
                 ),
+                const SizedBox(height: 16),
+                const Text(
+                  'Pilih Tanggal',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(height: 8),
+                GestureDetector(
+                  onTap: () => _selectDate(context),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 12,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      border: Border.all(
+                        color: _isDateInvalid ? Colors.red : Colors.black,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.calendar_today,
+                          size: 18,
+                          color: Colors.grey.shade600,
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          _selectedDate == null
+                              ? 'Pilih Tanggal'
+                              : DateFormat(
+                                'EEEE, dd-MM-yyyy',
+                              ).format(_selectedDate!),
+                          style: TextStyle(
+                            color:
+                                _selectedDate == null
+                                    ? Colors.grey.shade600
+                                    : Colors.black,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                if (_isDateInvalid)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4, left: 16),
+                    child: Text(
+                      'Tanggal tidak boleh kosong',
+                      style: TextStyle(color: Colors.red, fontSize: 12),
+                    ),
+                  ),
+                const SizedBox(height: 16),
               ],
             ),
           ),
