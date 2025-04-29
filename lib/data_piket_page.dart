@@ -192,6 +192,30 @@ class _DataPiketPageState extends State<DataPiketPage> {
                       ),
                     ),
                     const SizedBox(width: 12),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          _isDateInvalid = _selectedDate == null;
+                        });
+                        if (_formKey.currentState!.validate() &&
+                            !_isDateInvalid) {
+                          _addTask();
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 76, 27, 140),
+                        foregroundColor: Colors.white,
+                        elevation: 0,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 24,
+                          vertical: 12,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text('Tambah'),
+                    ),
                   ],
                 ),
               ],
