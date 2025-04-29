@@ -209,6 +209,37 @@ class _DataBarangPageState extends State<DataBarangPage> {
                         ),
                       ),
                     ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10, top: 10),
+                    child: DropdownButtonFormField<String>(
+                      value: selectedJenisTransaksi,
+                      decoration: const InputDecoration(
+                        labelText: 'Jenis Transaksi',
+                        hintText: 'Jenis Transaksi',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                        ),
+                      ),
+                      items:
+                          jenisTransaksiList.map((String jenisTransaksi) {
+                            return DropdownMenuItem<String>(
+                              value: jenisTransaksi,
+                              child: Text(jenisTransaksi),
+                            );
+                          }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          selectedJenisTransaksi = value!;
+                        });
+                      },
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Pilih jenis transaksi';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
