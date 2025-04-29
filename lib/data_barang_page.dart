@@ -240,6 +240,38 @@ class _DataBarangPageState extends State<DataBarangPage> {
                       },
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10, top: 11),
+                    child: DropdownButtonFormField<String>(
+                      value: selectedJenisBarang,
+                      decoration: const InputDecoration(
+                        labelText: 'Jenis Barang',
+                        hintText: 'Jenis Barang',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                        ),
+                      ),
+                      items:
+                          jenisBarangList.map((String jensiBarang) {
+                            return DropdownMenuItem<String>(
+                              value: jensiBarang,
+                              child: Text(jensiBarang),
+                            );
+                          }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          selectedJenisBarang = value!;
+                          _updateHargaSatuan(value);
+                        });
+                      },
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Pilih jenis barang';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
