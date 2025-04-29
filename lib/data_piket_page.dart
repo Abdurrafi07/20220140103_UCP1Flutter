@@ -111,7 +111,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
                 const SizedBox(height: 16),
                 const Text(
                   'Pilih Tanggal',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
                 GestureDetector(
@@ -162,6 +162,38 @@ class _DataPiketPageState extends State<DataPiketPage> {
                     ),
                   ),
                 const SizedBox(height: 16),
+                const Text(
+                  'Tugas Piket',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: tugasController,
+                        decoration: InputDecoration(
+                          hintText: 'Tugas Piket',
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 12,
+                          ),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Tugas piket tidak boleh kosong';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                  ],
+                ),
               ],
             ),
           ),
