@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter/home_page.dart';
 
 class DetailPelangganPage extends StatefulWidget {
   final String namaCust;
@@ -75,8 +76,8 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                   ClipOval(
                     child: Image.asset(
                       'assets/images/RzM.png',
-                      width: 60,
-                      height: 60,
+                      width: 100,
+                      height: 100,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -101,7 +102,7 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                     readOnly: true,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                     ),
                   ),
@@ -126,7 +127,7 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                               decoration: const InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(10),
                                   ),
                                 ),
                               ),
@@ -154,7 +155,7 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                               decoration: const InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(10),
                                   ),
                                 ),
                               ),
@@ -163,6 +164,40 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                         ),
                       ),
                     ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            76,
+                            27,
+                            140,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          padding: EdgeInsets.all(20),
+                        ),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.popUntil(
+                              context,
+                              (route) =>
+                                  route is MaterialPageRoute &&
+                                  route.builder(context) is HomePage,
+                            );
+                          }
+                        },
+                        child: Text(
+                          'Selesai',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
