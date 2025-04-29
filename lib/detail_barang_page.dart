@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter/home_page.dart';
 
 class DetailBarangPage extends StatelessWidget {
   final String tanggal;
@@ -110,6 +111,38 @@ class DetailBarangPage extends StatelessWidget {
                       thickness: 1,
                     ),
                   ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 76, 27, 140),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.popUntil(
+                        context,
+                        (route) =>
+                            route is MaterialPageRoute &&
+                            route.builder(context) is HomePage,
+                      );
+                    },
+
+                    child: const Text(
+                      'Selesai',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
