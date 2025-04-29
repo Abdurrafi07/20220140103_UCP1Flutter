@@ -51,6 +51,32 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Nama Lengkap',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  TextFormField(
+                    controller: namaLengkapController,
+                    decoration: const InputDecoration(
+                      hintText: 'Nama Lengkap',
+                      prefixIcon: Icon(Icons.person),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Nama lengkap tidak boleh kosong';
+                      }
+                      return null;
+                    },
+                  ),
                 ],
               ),
             ),
