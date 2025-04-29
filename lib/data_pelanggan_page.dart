@@ -64,7 +64,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                     decoration: const InputDecoration(
                       hintText: 'Nama Cust',
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
                     validator: (value) {
@@ -95,7 +95,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                                 hintText: 'Email',
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(15),
                                   ),
                                 ),
                               ),
@@ -130,7 +130,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                                 hintText: 'No HP',
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(15),
                                   ),
                                 ),
                               ),
@@ -161,7 +161,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                     decoration: const InputDecoration(
                       hintText: 'Alamat',
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
                     validator: (value) {
@@ -193,7 +193,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                                 hintText: 'Provinsi',
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(15),
                                   ),
                                 ),
                               ),
@@ -229,7 +229,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                                 hintText: 'Kode Pos',
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(15),
                                   ),
                                 ),
                               ),
@@ -258,7 +258,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                             140,
                           ),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                           ),
                           padding: EdgeInsets.all(20),
                         ),
@@ -300,7 +300,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                             255,
                           ),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             side: BorderSide(
                               color: Color.fromARGB(255, 76, 27, 140),
                               width: 2,
