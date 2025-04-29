@@ -14,9 +14,15 @@
 
 ![image](https://github.com/user-attachments/assets/c9b78bd8-2d6c-4727-8eae-6ec47ab3d391)
 
+![image](https://github.com/user-attachments/assets/31d66474-ac06-4215-a88b-4ef8dadae0a0)
+
+![image](https://github.com/user-attachments/assets/224be9f4-2513-469e-b3f2-72650619d7b6)
+
 # Home Page
 
 ![image](https://github.com/user-attachments/assets/b220beb9-ed4d-4ca1-89f9-c24a61c39382)
+
+![image](https://github.com/user-attachments/assets/88196b48-7c6f-468c-8e9a-bfb0c18c09bd)
 
 # Data Piket Page
 
@@ -63,6 +69,9 @@
 ![image](https://github.com/user-attachments/assets/8e2d76d9-76f4-4d09-bb0e-f88926897c98)
 
 # Detail Barang Page
+
+![image](https://github.com/user-attachments/assets/cac00580-e13e-42fa-84d0-19b8fee688bc)
+
 
 
 
