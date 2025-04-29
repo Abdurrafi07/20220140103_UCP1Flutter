@@ -69,7 +69,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       hintText: 'Nama Lengkap',
                       prefixIcon: Icon(Icons.person),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
                     validator: (value) {
@@ -101,7 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 prefixIcon: Icon(Icons.email),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(15),
                                   ),
                                 ),
                               ),
@@ -137,7 +137,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 prefixIcon: Icon(Icons.phone),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(15),
                                   ),
                                 ),
                               ),
@@ -190,7 +190,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(15),
                                   ),
                                 ),
                               ),
@@ -241,7 +241,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(15),
                                   ),
                                 ),
                               ),
@@ -270,7 +270,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             140,
                           ),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                           ),
                           padding: EdgeInsets.all(20),
                         ),

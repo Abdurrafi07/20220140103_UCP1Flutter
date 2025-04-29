@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: 'Email',
                       prefixIcon: Icon(Icons.email),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
                     validator: (value) {
@@ -104,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                       ),
                       border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
                     validator: (value) {
@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                             140,
                           ),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                           ),
                           padding: EdgeInsets.all(20),
                         ),
