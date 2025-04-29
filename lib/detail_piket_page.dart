@@ -103,7 +103,7 @@ class DetailPiketPage extends StatelessWidget {
                   color: Color.fromARGB(255, 76, 27, 140),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(16),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
