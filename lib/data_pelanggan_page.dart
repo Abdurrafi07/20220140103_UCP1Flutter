@@ -170,6 +170,45 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                       return null;
                     },
                   ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 9, top: 9),
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Provinsi',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            TextFormField(
+                              controller: provinsiController,
+                              decoration: const InputDecoration(
+                                hintText: 'Provinsi',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20),
+                                  ),
+                                ),
+                              ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Provinsi tidak boleh kosong';
+                                }
+                                return null;
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                    ],
+                  ),
                 ],
               ),
             ),
