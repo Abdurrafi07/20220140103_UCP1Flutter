@@ -146,7 +146,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: const Text(
-                      'Pilih Tanggal',
+                      'Tanggal Transaksi',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
