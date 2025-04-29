@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter/home_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -254,6 +255,33 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                       ),
                     ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 70),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            76,
+                            27,
+                            140,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: EdgeInsets.all(20),
+                        ),
+                        onPressed: () {
+                          
+                        },
+                        child: Text(
+                          'Daftar',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
