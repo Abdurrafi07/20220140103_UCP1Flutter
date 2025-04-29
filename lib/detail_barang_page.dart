@@ -71,6 +71,47 @@ class DetailBarangPage extends StatelessWidget {
                   color: Colors.black87,
                 ),
               ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 20,
+                ),
+                child: Column(
+                  children: [
+                    _detailTransaksi('Tanggal', tanggal),
+                    Divider(
+                      color: const Color.fromARGB(127, 158, 158, 158),
+                      thickness: 1,
+                    ),
+                    _detailTransaksi('Jenis Transaksi', jenisTransaksi),
+                    Divider(
+                      color: const Color.fromARGB(127, 158, 158, 158),
+                      thickness: 1,
+                    ),
+                    _detailTransaksi('Jenis Barang', jenisBarang),
+                    Divider(
+                      color: const Color.fromARGB(127, 158, 158, 158),
+                      thickness: 1,
+                    ),
+                    _detailTransaksi('Jumlah Barang', jumlahBarang),
+                    Divider(
+                      color: const Color.fromARGB(127, 158, 158, 158),
+                      thickness: 1,
+                    ),
+                    _detailTransaksi('Jenis Harga Satuan', hargaSatuan),
+                    Divider(
+                      color: const Color.fromARGB(127, 158, 158, 158),
+                      thickness: 1,
+                    ),
+                    _detailTransaksi('Total Harga', 'Rp. $totalHarga'),
+                    Divider(
+                      color: const Color.fromARGB(127, 158, 158, 158),
+                      thickness: 1,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
