@@ -82,7 +82,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
           },
         ),
         title: const Text(
-          'Piket Gudang',
+          'Data Piket',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: const Color.fromARGB(255, 76, 27, 140),
