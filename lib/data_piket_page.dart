@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:ucp1flutter/detail_piket_page.dart';
 
 class DataPiketPage extends StatefulWidget {
@@ -41,15 +40,29 @@ class _DataPiketPageState extends State<DataPiketPage> {
     }
   }
 
+  String formatTanggal(DateTime date) {
+    return "${_hari(date.weekday)}, ${date.day} ${_bulan(date.month)} ${date.year}";
+  }
+
+  String _hari(int index) {
+    const hari = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
+    return hari[index - 1];
+  }
+
+  String _bulan(int index) {
+    const bulan = [
+      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+    return bulan[index - 1];
+  }
+
   void _addTask() {
     if (tugasController.text.trim().isNotEmpty) {
       setState(() {
         listTugas.add({
           'task': tugasController.text.trim(),
-          'date':
-              _selectedDate != null
-                  ? DateFormat('dd-MM-yyyy').format(_selectedDate!)
-                  : '',
+          'date': _selectedDate != null ? formatTanggal(_selectedDate!) : '',
           'name': namaController.text,
         });
         tugasController.clear();
@@ -139,9 +152,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
                         Text(
                           _selectedDate == null
                               ? 'Pilih Tanggal'
-                              : DateFormat(
-                                'EEEE, dd-MM-yyyy',
-                              ).format(_selectedDate!),
+                              : formatTanggal(_selectedDate!),
                           style: TextStyle(
                             color:
                                 _selectedDate == null
@@ -220,65 +231,64 @@ class _DataPiketPageState extends State<DataPiketPage> {
                   ],
                 ),
                 const SizedBox(height: 24),
-                Center(
-                  child: const Text(
+                const Center(
+                  child: Text(
                     'Daftar Tugas Piket',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
                 const SizedBox(height: 16),
                 listTugas.isEmpty
-                    ? Center(
-                      child: Column(
-                        children: const [
-                          Text(
-                            'Belum ada Data',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    )
+                    ? const Center(
+                        child: Text(
+                          'Belum ada Data',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      )
                     : ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: listTugas.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 76, 27, 140),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: ListTile(
-                              title: Text(
-                                listTugas[index]['task'],
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: listTugas.length,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 76, 27, 140),
+                                borderRadius: BorderRadius.circular(12),
                               ),
-                              trailing: const Icon(
-                                Icons.arrow_forward_ios,
-                                color: Colors.white,
-                                size: 16,
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder:
-                                        (context) => DetailPiketPage(
-                                          listTugas: listTugas[index],
-                                        ),
+                              child: ListTile(
+                                title: Text(
+                                  listTugas[index]['task'],
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                );
-                              },
+                                ),
+                                // subtitle: Text(
+                                //   listTugas[index]['date'],
+                                //   style: const TextStyle(color: Colors.white70),
+                                // ),
+                                trailing: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.white,
+                                  size: 16,
+                                ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => DetailPiketPage(
+                                        listTugas: listTugas[index],
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                    ),
+                          );
+                        },
+                      ),
               ],
             ),
           ),
