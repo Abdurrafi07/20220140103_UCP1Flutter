@@ -31,8 +31,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
   String? selectedJenisBarang;
 
   DateTime? _selectedDate;
-  bool _isInvalidDate = false;
-  
+  bool _isDateInvalid = false; 
 
   Map<String, int> hargaBarang = {
     'Pot Bonsai': 30000,
@@ -40,6 +39,43 @@ class _DataBarangPageState extends State<DataBarangPage> {
     'Kawat Bonsai': 15000,
     'Tanah Akadama': 20000,
   };
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate ?? DateTime.now(),
+      firstDate: DateTime(2025),
+      lastDate: DateTime(2045),
+    );
+    if (picked != null) {
+      setState(() {
+        _selectedDate = picked;
+        _isDateInvalid = false;
+      });
+    }
+  }
+
+  String formatTanggal(DateTime date) {
+    return "${_hari(date.weekday)}, ${date.day} ${_bulan(date.month)} ${date.year}";
+  }
+
+  String _hari(int index) {
+    const hari = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
+    return hari[index - 1];
+  }
+
+  String _bulan(int index) {
+    const bulan = [
+      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+    return bulan[index - 1];
+  }
 
   @override
   Widget build(BuildContext context) {
