@@ -134,6 +134,76 @@ class _DataBarangPageState extends State<DataBarangPage> {
           },
         ),
       ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Form(
+            key: formKey,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'Pilih Tanggal',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 7),
+                  GestureDetector(
+                    onTap: () => _selectDate(context),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 12,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        border: Border.all(
+                          color:
+                              _isDateInvalid
+                                  ? Colors.red
+                                  : const Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.calendar_today,
+                                size: 18,
+                                color: Colors.grey.shade600,
+                              ),
+                              const SizedBox(width: 8),
+                              Text(
+                                _selectedDate == null
+                                    ? 'Pilih Tanggal'
+                                    : formatTanggal(_selectedDate!),
+                                style: TextStyle(
+                                  color:
+                                      _selectedDate == null
+                                          ? Colors.grey.shade600
+                                          : Colors.black,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
