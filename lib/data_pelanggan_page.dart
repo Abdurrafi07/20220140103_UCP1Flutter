@@ -253,9 +253,9 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color.fromARGB(
                             255,
-                            50,
-                            140,
+                            76,
                             27,
+                            140,
                           ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
@@ -283,6 +283,39 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                         child: Text(
                           'Simpan',
                           style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            255,
+                            255,
+                            255,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            side: BorderSide(
+                              color: Color.fromARGB(255, 76, 27, 140),
+                              width: 2,
+                            ),
+                          ),
+                          padding: EdgeInsets.all(20),
+                        ),
+                        onPressed: () {
+                          _formKey.currentState?.reset();
+                        },
+                        child: Text(
+                          'Reset',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 76, 27, 140),
+                          ),
                         ),
                       ),
                     ),
