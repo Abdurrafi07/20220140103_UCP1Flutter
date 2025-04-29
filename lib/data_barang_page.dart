@@ -182,7 +182,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                               const SizedBox(width: 8),
                               Text(
                                 _selectedDate == null
-                                    ? 'Pilih Tanggal'
+                                    ? 'Tanggal Transaksi'
                                     : formatTanggal(_selectedDate!),
                                 style: TextStyle(
                                   color:
@@ -198,6 +198,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                       ),
                     ),
                   ),
+
                 ],
               ),
             ),
