@@ -22,6 +22,21 @@ class _HomePageState extends State<HomePage> {
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 76, 27, 140),
               ),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20, left: 16),
+                child: Row(
+                  children: [
+                    ClipOval(
+                      child: Image.asset(
+                        'assets/images/RzM.png',
+                        width: 60,
+                        height: 60,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
