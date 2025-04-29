@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ucp1flutter/detail_piket_page.dart';
 
 class DataPiketPage extends StatefulWidget {
   final String email;
@@ -262,6 +263,17 @@ class _DataPiketPageState extends State<DataPiketPage> {
                                 color: Colors.white,
                                 size: 16,
                               ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder:
+                                        (context) => DetailPiketPage(
+                                          listTugas: listTugas[index],
+                                        ),
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         );
