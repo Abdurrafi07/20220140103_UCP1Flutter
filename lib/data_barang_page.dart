@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter/detail_barang_page.dart';
 
 class DataBarangPage extends StatefulWidget {
   const DataBarangPage({super.key});
@@ -326,7 +327,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                               controller: hargaSatuanController,
                               readOnly: true,
                               decoration: const InputDecoration(
-                                hintText: 'Harga Satuan',
+                                hintText: 'Rp. Harga Satuan',
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(10),
@@ -344,6 +345,51 @@ class _DataBarangPageState extends State<DataBarangPage> {
                         ),
                       ),
                     ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 76, 27, 140),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          padding: EdgeInsets.all(20),
+                        ),
+                        onPressed: () {
+                          if (_selectedDate == null) {
+                            setState(() {
+                              _isDateInvalid = true;
+                            });
+                          }
+                          if (formKey.currentState!.validate()) {
+                            calculateTotalHarga();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) => DetailBarangPage(
+                                      tanggal: _selectedDate.toString(),
+                                      jenisTransaksi:
+                                          selectedJenisTransaksi.toString(),
+                                      jenisBarang:
+                                          selectedJenisBarang.toString(),
+                                      jumlahBarang: jumlahBarangController.text,
+                                      hargaSatuan: hargaSatuanController.text,
+                                      totalHarga: totalHarga.toString(),
+                                    ),
+                              ),
+                            );
+                          }
+                        },
+                        child: Text(
+                          'Submit',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
