@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class DataPiketPage extends StatefulWidget {
   final String email;
@@ -15,6 +16,8 @@ class _DataPiketPageState extends State<DataPiketPage> {
   final _formKey = GlobalKey<FormState>();
   DateTime? _selectedDate;
   bool _isDateInvalid = false;
+
+  List<Map<String, dynamic>> listTugas = [];
 
   @override
   void initState() {
@@ -33,6 +36,22 @@ class _DataPiketPageState extends State<DataPiketPage> {
       setState(() {
         _selectedDate = picked;
         _isDateInvalid = false;
+      });
+    }
+  }
+
+  void _addTask() {
+    if (tugasController.text.trim().isNotEmpty) {
+      setState(() {
+        listTugas.add({
+          'task': tugasController.text.trim(),
+          'date':
+              _selectedDate != null
+                  ? DateFormat('dd-MM-yyyy').format(_selectedDate!)
+                  : '',
+          'name': namaController.text,
+        });
+        tugasController.clear();
       });
     }
   }
