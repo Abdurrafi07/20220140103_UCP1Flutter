@@ -225,6 +225,18 @@ class _DataPiketPageState extends State<DataPiketPage> {
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
+                const SizedBox(height: 16),
+                listTugas.isEmpty
+                    ? Center(
+                      child: Column(
+                        children: const [
+                          Text(
+                            'Belum ada Data',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    )
               ],
             ),
           ),
