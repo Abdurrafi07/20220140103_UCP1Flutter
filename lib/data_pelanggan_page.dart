@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter/detail_pelanggan_page.dart';
 
 class DataPelangganPage extends StatefulWidget {
   const DataPelangganPage({super.key});
@@ -243,6 +244,48 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                         ),
                       ),
                     ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            50,
+                            140,
+                            27,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: EdgeInsets.all(20),
+                        ),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) => DetailPelangganPage(
+                                      alamat: alamatController.text,
+                                      email: emailController.text,
+                                      kodePos: kodePosController.text,
+                                      namaCust: namaCustController.text,
+                                      noHP: noHPController.text,
+                                      provinsi: provinsiController.text,
+                                    ),
+                              ),
+                            );
+                          }
+                        },
+                        child: Text(
+                          'Simpan',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
