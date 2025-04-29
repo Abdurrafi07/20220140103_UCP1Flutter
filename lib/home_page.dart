@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -74,6 +74,10 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Image.asset('assets/images/Home.png'),
             ),
           ],
         ),
