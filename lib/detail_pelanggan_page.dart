@@ -72,12 +72,20 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/images/RzM.png', width: 100, height: 100),
-                  Padding(padding: const EdgeInsets.only(top: 5, bottom: 10)),
+                  ClipOval(
+                    child: Image.asset(
+                      'assets/images/RzM.png',
+                      width: 60,
+                      height: 60,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   Text(
                     widget.namaCust,
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
+                  Text(widget.email, style: TextStyle(fontSize: 20)),
+                  Text(widget.noHP, style: TextStyle(fontSize: 16)),
                 ],
               ),
             ),
