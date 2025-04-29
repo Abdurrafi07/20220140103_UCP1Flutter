@@ -108,7 +108,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
                     filled: true,
                     fillColor: Colors.white,
                     border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: 16,
@@ -136,7 +136,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
                       vertical: 12,
                     ),
                     decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
                       border: Border.all(
                         color: _isDateInvalid ? Colors.red : Colors.black,
                       ),
@@ -188,7 +188,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
                           filled: true,
                           fillColor: Colors.white,
                           border: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
                           ),
                           contentPadding: const EdgeInsets.symmetric(
                             horizontal: 16,
@@ -219,11 +219,11 @@ class _DataPiketPageState extends State<DataPiketPage> {
                         foregroundColor: Colors.white,
                         elevation: 0,
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 24,
-                          vertical: 12,
+                          horizontal: 50,
+                          vertical: 22,
                         ),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(15),
                         ),
                       ),
                       child: const Text('Tambah'),
@@ -255,7 +255,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: const Color.fromARGB(255, 76, 27, 140),
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(15),
                               ),
                               child: ListTile(
                                 title: Text(
