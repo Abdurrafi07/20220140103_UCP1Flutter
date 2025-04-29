@@ -86,6 +86,25 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                   ),
                   Text(widget.email, style: TextStyle(fontSize: 20)),
                   Text(widget.noHP, style: TextStyle(fontSize: 16)),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 12, top: 20),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Alamat',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  TextFormField(
+                    controller: alamatController,
+                    readOnly: true,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
