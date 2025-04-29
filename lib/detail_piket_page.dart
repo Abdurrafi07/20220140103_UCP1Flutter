@@ -46,7 +46,7 @@ class DetailPiketPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          listTugas['task'],
+          'Detail ${listTugas['task']}',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color.fromARGB(255, 76, 27, 140),
