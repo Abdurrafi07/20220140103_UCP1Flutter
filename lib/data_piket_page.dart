@@ -219,8 +219,8 @@ class _DataPiketPageState extends State<DataPiketPage> {
                         foregroundColor: Colors.white,
                         elevation: 0,
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 50,
-                          vertical: 22,
+                          horizontal: 24,
+                          vertical: 12,
                         ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
