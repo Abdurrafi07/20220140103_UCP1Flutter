@@ -78,7 +78,12 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 25, left: 25, right: 25, bottom: 30),
+              padding: const EdgeInsets.only(
+                top: 25,
+                left: 25,
+                right: 25,
+                bottom: 30,
+              ),
               child: Image.asset('assets/images/Home.png'),
             ),
             Row(
@@ -154,6 +159,27 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ],
+            ),
+            GestureDetector(
+              child: Container(
+                width: 370,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 76, 27, 140),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    Icon(Icons.receipt_long_rounded, color: Colors.white, size: 50),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Barang Masuk/Keluar',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
