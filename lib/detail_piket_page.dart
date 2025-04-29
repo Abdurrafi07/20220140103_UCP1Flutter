@@ -59,6 +59,45 @@ class DetailPiketPage extends StatelessWidget {
           },
         ),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      formatTanggal(tanggal),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 76, 27, 140),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: Color.fromARGB(255, 76, 27, 140),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        listTugas['name'],
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
