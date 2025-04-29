@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter/data_piket_page.dart';
 import 'package:ucp1flutter/login_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -94,11 +95,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: Column(
                         children: [
-                          Icon(
-                            Icons.add_chart,
-                            color: Colors.white,
-                            size: 50,
-                          ),
+                          Icon(Icons.add_chart, color: Colors.white, size: 50),
                           const SizedBox(height: 10),
                           const Text(
                             'Data Piket',
@@ -108,6 +105,15 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder:
+                              (context) => DataPiketPage(email: widget.email),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
