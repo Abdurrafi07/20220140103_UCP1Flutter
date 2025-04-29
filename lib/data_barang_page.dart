@@ -210,14 +210,13 @@ class _DataBarangPageState extends State<DataBarangPage> {
                       ),
                     ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 10, top: 10),
+                    padding: const EdgeInsets.only(bottom: 10, top: 21),
                     child: DropdownButtonFormField<String>(
                       value: selectedJenisTransaksi,
                       decoration: const InputDecoration(
-                        labelText: 'Jenis Transaksi',
                         hintText: 'Jenis Transaksi',
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                       ),
                       items:
@@ -245,10 +244,9 @@ class _DataBarangPageState extends State<DataBarangPage> {
                     child: DropdownButtonFormField<String>(
                       value: selectedJenisBarang,
                       decoration: const InputDecoration(
-                        labelText: 'Jenis Barang',
                         hintText: 'Jenis Barang',
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                       ),
                       items:
