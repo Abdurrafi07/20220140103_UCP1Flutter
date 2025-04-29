@@ -19,6 +19,17 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
+    // Listener untuk memperbarui tampilan saat user mengetik
+    emailController.addListener(() => setState(() {}));
+    passwordController.addListener(() => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    // Hapus listener ketika widget dihancurkan
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -60,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   TextFormField(
                     controller: emailController,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: const InputDecoration(
                       hintText: 'Email',
                       prefixIcon: Icon(Icons.email),
@@ -85,8 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   TextFormField(
-                    obscureText: _obscurePassword,
                     controller: passwordController,
+                    obscureText: _obscurePassword,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: InputDecoration(
                       hintText: 'Password',
                       prefixIcon: const Icon(Icons.lock),
@@ -120,12 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(
-                            255,
-                            76,
-                            27,
-                            140,
-                          ),
+                          backgroundColor: const Color.fromARGB(255, 76, 27, 140),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -136,9 +144,8 @@ class _LoginPageState extends State<LoginPage> {
                             Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                builder:
-                                    (context) =>
-                                        HomePage(email: emailController.text),
+                                builder: (context) =>
+                                    HomePage(email: emailController.text),
                               ),
                               (Route<dynamic> route) => false,
                             );
@@ -151,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20),
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
