@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                 right: 25,
                 bottom: 30,
               ),
-              child: Image.asset('assets/images/Home.png'),
+              // child: Image.asset('assets/images/Home.png'),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

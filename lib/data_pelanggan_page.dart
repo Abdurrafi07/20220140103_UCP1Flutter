@@ -207,6 +207,41 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                         ),
                       ),
                       SizedBox(width: 10),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 9, top: 9),
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Kode Pos',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            TextFormField(
+                              keyboardType: TextInputType.phone,
+                              controller: kodePosController,
+                              decoration: const InputDecoration(
+                                hintText: 'Kode Pos',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20),
+                                  ),
+                                ),
+                              ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Kode pos tidak boleh kosong';
+                                }
+                                return null;
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ],
