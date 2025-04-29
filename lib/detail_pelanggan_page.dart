@@ -122,7 +122,7 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                               ),
                             ),
                             TextFormField(
-                              controller: emailController,
+                              controller: provinsiController,
                               readOnly: true,
                               decoration: const InputDecoration(
                                 border: OutlineInputBorder(
@@ -150,7 +150,7 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                               ),
                             ),
                             TextFormField(
-                              controller: noHPController,
+                              controller: kodePosController,
                               readOnly: true,
                               decoration: const InputDecoration(
                                 border: OutlineInputBorder(
