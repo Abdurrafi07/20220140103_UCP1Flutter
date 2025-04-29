@@ -29,7 +29,7 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
   final TextEditingController alamatController = TextEditingController();
   final TextEditingController provinsiController = TextEditingController();
   final TextEditingController kodePosController = TextEditingController();
-  final formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -61,6 +61,27 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
           onPressed: () {
             Navigator.pop(context);
           },
+        ),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('assets/images/RzM.png', width: 100, height: 100),
+                  Padding(padding: const EdgeInsets.only(top: 5, bottom: 10)),
+                  Text(
+                    widget.namaCust,
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );
