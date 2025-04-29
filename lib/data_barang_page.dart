@@ -198,7 +198,17 @@ class _DataBarangPageState extends State<DataBarangPage> {
                       ),
                     ),
                   ),
-
+                  if (_isDateInvalid)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4, left: 16),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Tanggal tidak boleh kosong',
+                          style: TextStyle(color: Colors.red, fontSize: 12),
+                        ),
+                      ),
+                    ),
                 ],
               ),
             ),
