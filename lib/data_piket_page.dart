@@ -62,7 +62,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
       setState(() {
         listTugas.add({
           'task': tugasController.text.trim(),
-          'date': _selectedDate != null ? formatTanggal(_selectedDate!) : '',
+          'date': _selectedDate!,
           'name': namaController.text,
         });
         tugasController.clear();
