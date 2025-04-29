@@ -103,6 +103,19 @@ class _DataBarangPageState extends State<DataBarangPage> {
     }
   }
 
+  void calculateTotalHarga() {
+    int jumlahBarang = int.tryParse(jumlahBarangController.text) ?? 0;
+    int hargaSatuan =
+        int.tryParse(
+          hargaSatuanController.text.replaceAll('Rp. ', '').replaceAll('.', ''),
+        ) ??
+        0;
+
+    setState(() {
+      totalHarga = jumlahBarang * hargaSatuan;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
