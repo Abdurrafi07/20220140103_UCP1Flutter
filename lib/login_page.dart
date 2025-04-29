@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -111,6 +112,43 @@ class _LoginPageState extends State<LoginPage> {
                       }
                       return null;
                     },
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 70),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            76,
+                            27,
+                            140,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: EdgeInsets.all(20),
+                        ),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) =>
+                                        HomePage(email: emailController.text),
+                              ),
+                              (Route<dynamic> route) => false,
+                            );
+                          }
+                        },
+                        child: Text(
+                          'Masuk',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
