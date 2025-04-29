@@ -308,6 +308,41 @@ class _DataBarangPageState extends State<DataBarangPage> {
                         ),
                       ),
                       SizedBox(width: 10),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 9, top: 9),
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Harga Satuan',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            TextFormField(
+                              controller: hargaSatuanController,
+                              readOnly: true,
+                              decoration: const InputDecoration(
+                                hintText: 'Harga Satuan',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Harga satuan tidak boleh kosong';
+                                }
+                                return null;
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ],
