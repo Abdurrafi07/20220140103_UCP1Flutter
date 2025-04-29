@@ -274,7 +274,41 @@ class _RegisterPageState extends State<RegisterPage> {
                           padding: EdgeInsets.all(20),
                         ),
                         onPressed: () {
-                          
+                          if (_formKey.currentState!.validate() &&
+                              passwordController.text ==
+                                  konfirmasiPasswordController.text) {
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) =>
+                                        HomePage(email: emailController.text),
+                              ),
+                              (Route<dynamic> route) => false,
+                            );
+                          }
+                          if (passwordController.text !=
+                              konfirmasiPasswordController.text) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 20.0,
+                                  ),
+                                  child: Text(
+                                    'Password tidak sama',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                backgroundColor: const Color.fromARGB(
+                                  255,
+                                  145,
+                                  1,
+                                  81,
+                                ),
+                              ),
+                            );
+                          }
                         },
                         child: Text(
                           'Daftar',
