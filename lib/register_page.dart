@@ -196,7 +196,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               ),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Passowrd tidak boleh kosong';
+                                  return 'Password tidak boleh kosong';
                                 }
                                 return null;
                               },
