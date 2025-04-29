@@ -176,7 +176,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                           Row(
                             children: [
                               Icon(
-                                Icons.calendar_today,
+                                Icons.event_available_outlined,
                                 size: 18,
                                 color: Colors.grey.shade600,
                               ),
@@ -325,10 +325,15 @@ class _DataBarangPageState extends State<DataBarangPage> {
                             ),
                             TextFormField(
                               controller: hargaSatuanController,
-                              readOnly: true,
-                              decoration: const InputDecoration(
-                                hintText: 'Rp. Harga Satuan',
-                                border: OutlineInputBorder(
+                              readOnly: true, // Jika ingin user bisa mengedit
+                              decoration: InputDecoration(
+                                prefixText: 'Rp. ',
+                                prefixStyle: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black, // Sesuaikan dengan tema
+                                ),
+                                hintText: 'Harga Satuan',
+                                border: const OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(10),
                                   ),
@@ -352,7 +357,12 @@ class _DataBarangPageState extends State<DataBarangPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(255, 76, 27, 140),
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            76,
+                            27,
+                            140,
+                          ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
