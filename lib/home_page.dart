@@ -17,7 +17,12 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-
+            Container(
+              height: 120,
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 76, 27, 140),
+              ),
+            ),
           ],
         ),
       ),
