@@ -23,6 +23,25 @@ class DetailPelangganPage extends StatefulWidget {
 }
 
 class _DetailPelangganPageState extends State<DetailPelangganPage> {
+  final TextEditingController namaCusController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController noHPController = TextEditingController();
+  final TextEditingController alamatController = TextEditingController();
+  final TextEditingController provinsiController = TextEditingController();
+  final TextEditingController kodePosController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+
+  @override
+  void initState() {
+    super.initState();
+    namaCusController.text = widget.namaCust;
+    emailController.text = widget.email;
+    noHPController.text = widget.noHP;
+    alamatController.text = widget.alamat;
+    provinsiController.text = widget.provinsi;
+    kodePosController.text = widget.kodePos;
+  }
+  
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
