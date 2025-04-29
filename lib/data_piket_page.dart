@@ -75,6 +75,44 @@ class _DataPiketPageState extends State<DataPiketPage> {
         centerTitle: true,
         elevation: 0,
       ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Nama Anggota',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 7),
+                TextFormField(
+                  controller: namaController,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 12,
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Nama anggota tidak boleh kosong';
+                    }
+                    return null;
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
