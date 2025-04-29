@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.only(top: 25, left: 25, right: 25, bottom: 30),
               child: Image.asset('assets/images/Home.png'),
             ),
             Row(
@@ -114,6 +114,34 @@ class _HomePageState extends State<HomePage> {
                         ),
                       );
                     },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: GestureDetector(
+                    child: Container(
+                      width: 170,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 76, 27, 140),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.people_alt_rounded,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          const SizedBox(height: 10),
+                          const Text(
+                            'Data Pelanggan',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],
